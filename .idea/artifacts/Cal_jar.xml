@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Cal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cal_jar</output-path>
+    <root id="archive" name="Cal.jar">
+      <element id="module-output" name="Cal" />
+      <element id="extracted-dir" path="E:/Programme/DevSoft/m2/repo/org/springframework/spring-core/5.2.0.RELEASE/spring-core-5.2.0.RELEASE.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

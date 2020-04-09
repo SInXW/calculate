@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_frm" prefHeight="600.0" prefWidth="917.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label graphicTextGap="10.0" layoutX="312.0" layoutY="7.0" style="-fx-background-image: images/Icon;" text="四则运算生成">
+         <font>
+            <Font name="Microsoft YaHei" size="34.0" />
+         </font>
+          <graphic>
+              <ImageView>
+                  <image>
+                      <Image url="/images/Icon.png" />
+                  </image>
+              </ImageView>
+          </graphic>
+      </Label>
+      <Label graphicTextGap="10.0" layoutX="592.0" layoutY="120.0" style="-fx-background-color: #FFFFFF;" text="题目数量：">
+         <font>
+            <Font name="YouYuan" size="16.0" />
+         </font>
+         
+      </Label>
+      <Line endX="894.0" layoutX="23.0" layoutY="103.0" startX="-23.0" />
+      <TextField fx:id="question_num_input" layoutX="677.0" layoutY="120.0" prefHeight="23.0" prefWidth="133.0" />
+      <Label graphicTextGap="10.0" layoutX="592.0" layoutY="213.0" style="-fx-background-color: #FFFFFF;" text="算       术：">
+         <font>
+            <Font name="YouYuan" size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="add_select" layoutX="677.0" layoutY="213.0" mnemonicParsing="false" selected="true" text="加法">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="subtract_select" layoutX="749.0" layoutY="213.0" mnemonicParsing="false" selected="true" text="减法">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="multi_select" layoutX="677.0" layoutY="261.0" mnemonicParsing="false" selected="true" text="乘法">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="division_select" layoutX="749.0" layoutY="261.0" mnemonicParsing="false" selected="true" text="除法">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <Label graphicTextGap="10.0" layoutX="592.0" layoutY="166.0" style="-fx-background-color: #FFFFFF;" text="数值范围：">
+         <font>
+            <Font name="YouYuan" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="question_range_input" layoutX="677.0" layoutY="166.0" prefHeight="23.0" prefWidth="133.0" />
+      <Button fx:id="generate_btn" layoutX="677.0" layoutY="294.0" mnemonicParsing="false" onAction="#generateQuestion" prefHeight="30.0" prefWidth="133.0" text="生成">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="question_table" layoutX="32.0" layoutY="120.0" prefHeight="462.0" prefWidth="502.0">
+         <columns>
+            <TableColumn fx:id="question_id" prefWidth="50.0" text="题号" />
+            <TableColumn fx:id="question" prefWidth="303.0" text="算式" />
+            <TableColumn fx:id="question_result" minWidth="0.0" prefWidth="97.0" text="结果" />
+            <TableColumn fx:id="correct_column" prefWidth="51.0" text="正确性" />
+         </columns></TableView>
+      <Button fx:id="output_question_btn" layoutX="547.0" layoutY="370.0" mnemonicParsing="false" onAction="#outputQuestion" prefHeight="30.0" prefWidth="89.0" text="导出题目">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="output_answer_btn" layoutX="547.0" layoutY="411.0" mnemonicParsing="false" onAction="#outputAnswer" prefHeight="30.0" prefWidth="89.0" text="导出答案">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="input_question_btn" layoutX="547.0" layoutY="462.0" mnemonicParsing="false" onAction="#inputQuestion" prefHeight="30.0" prefWidth="89.0" text="导入题目">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="input_answer_btn" layoutX="547.0" layoutY="505.0" mnemonicParsing="false" onAction="#inputAnswer" prefHeight="30.0" prefWidth="89.0" text="导入答案">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="question_input" disable="true" layoutX="644.0" layoutY="462.0" prefHeight="30.0" prefWidth="255.0" />
+      <TextField fx:id="answer_input" disable="true" layoutX="644.0" layoutY="505.0" prefHeight="30.0" prefWidth="255.0" />
+      <Button fx:id="check_btn" layoutX="734.0" layoutY="552.0" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="30.0" prefWidth="165.0" text="导出验证结果">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="question_exp_output" disable="true" layoutX="644.0" layoutY="370.0" prefHeight="30.0" prefWidth="255.0" />
+      <TextField fx:id="question_answer_output" disable="true" layoutX="644.0" layoutY="411.0" prefHeight="30.0" prefWidth="255.0" />
+      <Button fx:id="input_all" layoutX="547.0" layoutY="552.0" mnemonicParsing="false" onAction="#inputAll" prefHeight="30.0" prefWidth="165.0" text="导入并验证">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      
+   </children>
+</AnchorPane>
